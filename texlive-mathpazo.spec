@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /fonts/mathpazo
+# catalog-date 2009-10-06 20:42:53 +0200
+# catalog-license gpl
+# catalog-version 1.003
 Name:		texlive-mathpazo
 Version:	1.003
 Release:	1
@@ -153,6 +159,7 @@ part of any LaTeX distribution).
 %doc %{_texmfdistdir}/source/latex/mathpazo/unsetpunct.mtx
 %doc %{_texmfdistdir}/source/latex/mathpazo/zplmbgop.mtx
 %doc %{_texmfdistdir}/source/latex/mathpazo/zplmsum.mtx
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -163,3 +170,5 @@ part of any LaTeX distribution).
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
