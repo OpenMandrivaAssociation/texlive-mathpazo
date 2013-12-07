@@ -6,7 +6,7 @@
 # catalog-version 1.003
 Name:		texlive-mathpazo
 Version:	1.003
-Release:	3
+Release:	4
 Summary:	Fonts to typeset mathematics to match Palatino
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/mathpazo
