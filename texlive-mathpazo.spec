@@ -1,19 +1,13 @@
-# revision 15878
-# category Package
-# catalog-ctan /fonts/mathpazo
-# catalog-date 2009-10-06 20:42:53 +0200
-# catalog-license gpl
-# catalog-version 1.003
 Name:		texlive-mathpazo
-Version:	1.003
-Release:	11
+Version:	52663
+Release:	1
 Summary:	Fonts to typeset mathematics to match Palatino
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/mathpazo
 License:	GPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mathpazo.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mathpazo.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mathpazo.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mathpazo.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mathpazo.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mathpazo.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -43,12 +37,12 @@ use with Palatino (or one of its clones). LaTeX macro support
 part of any LaTeX distribution).
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -152,24 +146,11 @@ part of any LaTeX distribution).
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.003-2
-+ Revision: 753779
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.003-1
-+ Revision: 718974
-- texlive-mathpazo
-- texlive-mathpazo
-- texlive-mathpazo
-- texlive-mathpazo
-
