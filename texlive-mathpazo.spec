@@ -1,6 +1,6 @@
 Name:		texlive-mathpazo
 Version:	52663
-Release:	1
+Release:	2
 Summary:	Fonts to typeset mathematics to match Palatino
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/mathpazo
